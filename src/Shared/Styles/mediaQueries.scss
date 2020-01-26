@@ -1,0 +1,36 @@
+$screen-min: 480px;
+$screen-medium: 600px;
+$screen-large: 980px;
+$screen-x-large: 1200px;
+
+@mixin small {
+    $max: $screen-medium;
+
+    @media (max-width: #{$max}) {
+        @content;
+    }
+}
+
+@mixin medium {
+    $min: calc(#{$screen-medium} + 1px);
+
+    @media (min-width: #{$min}) {
+        @content;
+    }
+}
+
+@mixin large {
+    $min: calc(#{$screen-large} + 1px);
+
+    @media (min-width: #{$min}) {
+        @content;
+    }
+}
+
+@mixin x-large {
+    $min: calc(#{$screen-x-large} + 1px);
+
+    @media (min-width: #{$min}) {
+        @content;
+    }
+}
