@@ -11,7 +11,10 @@ locals {
 
   project_repo                = "design-system"
   bucket_name                 = "julian-tellez-design-system"
-  acm_certificate_domain_name = "juliantellez.com"
+  acm_certificate_domain_name = "*.juliantellez.com"
+
+  # SSL Certificate for *.juliantellez.com
+  acm_certificate_arn = "${var.acm_certificate_arn}"
 
   cloudfront_origin_id = "s3-${local.bucket_name}${local.enviroment_delimiter}"
 
